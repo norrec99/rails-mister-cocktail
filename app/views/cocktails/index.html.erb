@@ -1,14 +1,17 @@
 
     <div class="container">
-      <h1>Cocktail's Name</h1>
-        <p class="btn btn-ghost"><%= link_to 'New Cocktail', new_cocktail_path %></p>
-      
-          <% @cocktails.each do |cocktail| %>
-            <div class="cards mt-3">
-              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-                <%= link_to cocktail.name, cocktail_path(cocktail) %>
-              </div> 
-            </div>
-          <% end %>
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+        <div class="container">
+          <h1>Cocktails</h1>
+          <a class="btn btn-flat" href="#">New Cocktail</a>
+        </div>
+      </div>
 
+      <div class="cards-grid">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </div>
+      <% end %>
+      </div>
     </div>
