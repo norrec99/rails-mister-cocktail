@@ -1,25 +1,14 @@
-<p id="notice"><%= notice %></p>
 
-<h1>cocktails</h1>
+    <div class="container">
+      <h1>Cocktail's Name</h1>
+        <p class="btn btn-gradient"><%= link_to 'New Cocktail', new_cocktail_path %></p>
+      
+          <% @cocktails.each do |cocktail| %>
+            <div class="cards mt-3">
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+                <%= link_to cocktail.name, cocktail_path(cocktail) %>
+              </div> 
+            </div>
+          <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Cocktail', new_cocktail_path %>
+    </div>
