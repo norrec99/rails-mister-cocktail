@@ -4,4 +4,5 @@ class Cocktail < ApplicationRecord
   has_one_attached :photo, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
+  validates :photo, presence: true
 end
