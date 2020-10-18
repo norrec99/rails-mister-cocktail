@@ -20,7 +20,7 @@
 <div class="container">
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.input :description %>
-    <%= f.association :ingredient, collection: Ingredient.order(:name) %>
+    <%= f.association :ingredient, collection: Ingredient.order(:name), input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
     <%= f.button :submit, class: "btn btn-gradient" %>
   <% end %>
 </div>
